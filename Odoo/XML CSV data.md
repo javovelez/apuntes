@@ -69,6 +69,34 @@ Si al hacer un update en un archivo xml, dejara de existir un determinado xml id
 
 # Cargar información a través de archivos .csv
 
-se debe indicar en el manifest para instalarlo. El nombre del archivo debe coincidir con el modelo sobre el que queremos crear registros. Para cargar valores escalares si es necesario se pueden cargar entre comillas para evitar la confusión con puntos  comas pertenecientes al número.
+Se debe indicar en el manifest para instalarlo. El nombre del archivo debe coincidir con el modelo sobre el que queremos importar información. Para cargar valores escalares si es necesario se pueden cargar entre comillas para evitar la confusión con puntos  comas pertenecientes al número.
 
-Cuando se escribe sobre campos x2many Odoo trata de implementar la columna como un xml id.
+Cuando se escribe sobre campos x2many Odoo trata de implementar la columna como un xml id y si no hay un punto en su nombre odoo intentará usar como nombre de dominio el módulo actual. Si esto falla se llama la fucnción  name_search del modelo con el nobre de la columna como parámetro. Si esto también falla, la línea también es considerada inválidad y Odoo resporta un error.
+
+Los datos leidos de un archivo csv tiene ``nonupdate=False`` y esto significa que las subsecuntes actualizaciones del módulo siempre sobreescribirá los cambios realizados por el usuario. Si es necesaria importación masiva de información sin que se actualice al actualizar el módulo hay que cargar el csv desde un init hook.
+
+Se pueden cargar campos de un x2many mediante un archivo csv pero es un poco complicado. Es recomendable crear los registros con el csv y luego cargar los campos relacionales mediante un archivo xml o trabajar con un segundo archivo csv.
+
+La carga en csv se realiza colocando una columna lo más a la derecha posible compuesto por el nombre del campo que linkea los modelos y el campo a cargar del modelo linkeado separado por ":"
+
+# Actualización de add ons y migración de datos.
+
+Con el tiempo podemos necesitar ajustar los modelos de un add on. Para esto odoo soporta versionado y ejecutar migraciones de ser necesario.
+
+Por ejemplo si tenemos un campo **char** que queremos convertir a **date** debemos realizar lo siguiente:
+
+- Aumentar la versión en el manifest del módulo en cuestión.
+- Escribier el código de pre migración en migrations/vesión/pre-migrate.py (versión es por ejemplo 13.0.1.2.1
+
+    def migrate(cr, version):
+        cr.execute('ALTER TABLE library_book RENAME COLUMN 
+            date_release   
+            TO 
+            date_release_char')
+
+- Escribir el código de post-migración en migrations/versión/post-migrate.py (ver página 217)
+
+
+
+
+
