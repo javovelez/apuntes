@@ -45,3 +45,5 @@ Para salir``\q`` y luego presione ENTER  de psql o ``ctrl+d``
 Para restaurar
 
 ``psql -U username -W -h host basename < basename.sql``
+
+``psql  -W  TIMSATEST < TIMSATEST.sql``
