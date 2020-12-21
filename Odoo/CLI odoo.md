@@ -46,6 +46,6 @@ Para restaurar
 
 ``psql -U username -W -h host basename < basename.sql``
 
-``createdb -O rck10 rck_test6``
+``createdb -O username maybeOtherName``
 
 ``psql  -W  TIMSATEST < TIMSATEST.sql``
