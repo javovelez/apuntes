@@ -9,3 +9,7 @@ Con > iniciamos una cita
 >cita 
 
 Para hacer listas debemos cmenzar la horación con "*", "-";o un número. 
+
+Para resaltar un texto usamos doble acento invertido al inicio y al final ``
+
+``Así se ve``
