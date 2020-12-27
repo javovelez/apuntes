@@ -64,7 +64,7 @@ Agrego a .tmux.conf la línea set-option -g prefix C-a que permite que ahora la 
 
 para que tenga impacto debo matar el servidor tmux con ``tmux kill-server``, luego ejecuto ``tmux`` nuevamente.
 
-También puede ser util el comando ``tmux kill-session -t 0 (o el nombre que tenga la sesión)
+También puede ser util el comando ``tmux kill-session -t 0`` (o el nombre que tenga la sesión)
 
 Fuentes:
 
