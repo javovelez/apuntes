@@ -60,6 +60,11 @@ Para grabar la sesión abierta (luego de haber instalado el plug in) ejecutamos 
 
 Para restaurar la sesión podemos ejecutar ``ctrl+b``->``r``
 
+Agrego a .tmux.conf la línea set-option -g prefix C-a que permite que ahora la "clave" de comandos sea ``ctrl+a``
+
+para que tenga impacto debo matar el servidor tmux con ``tmux kill-server``, luego ejecuto ``tmux`` nuevamente.
+
+También puede ser util el comando ``tmux kill-session -t 0 (o el nombre que tenga la sesión)
 
 Fuentes:
 
