@@ -1,6 +1,5 @@
 # Markdown
 
-Para poner signo de "menor" debo escribir ``&lt ;`` (sin el espacio enrte &lt y la coma)
 
 ## Título
 
@@ -97,3 +96,14 @@ También podrás añadir un título alternativo entrecomillándolo al final de l
 ## Omitir  Markdown
 
 barra invertida \\
+
+Miscelaneos:
+Para poner signo de "menor" debo escribir ``&lt; `` (sin las comillas) o barra invertida signo menor \< 
+
+Más características no standars [Aqui](https://joedicastro.com/pages/markdown.html#mark10)
+
+
+Tablas :https://markdown.es/multimarkdown/#tablas 
+
+Fuente:
+https://markdown.es/sintaxis-markdown/
