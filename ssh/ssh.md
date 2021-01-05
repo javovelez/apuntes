@@ -51,10 +51,12 @@ Si ejecuto el siguiente comando me voy a conectar al ``server2`` desde mi máqui
 El puerto 2020 se crea en mi máquina que apunta al puerto 22 de ``server2`` a través del ``server1``
 
 Luego ejecuto
-    ssh -p 2020 user@localhost
+
+    ``ssh -p 2020 user@localhost``
 
 Una utilidad de este comando es apuntar por ejemplo el puerto 8080 de mi máquina al puerto 80 del ``server1`` siendo el puerto 80 del ``server1`` no expuesto a internet:
-    ssh -L 8080:localhost:80 user@host1
+
+``ssh -L 8080:localhost:80 user@host1``
 
 Luego yo puedo ingresar con el navegador a localhost:8080 y veo el puerto 80 (que no es público) del ``server1``
 
@@ -66,14 +68,18 @@ Desde `server2`:
 con esto apunto el puerto 2020 de ``host3`` al puerto 22 de localhost que en este caso es ``host2``
 
 Luego desde mi máquin:
-    ssh -p 2020 user@host3
+
+``ssh -p 2020 userhost2@host3``
 
 O desde ``server3``
-    ssh userserver2@localhost -p2020
+
+``ssh userhost2@localhost -p2020``
 
 Un ejemplo sería:
 No puedo acceder a mi raspi porque tengo nateada la ip
-Desde la raspi ejecutar  ``ssh -fNR 2020:localhost:22 userDeServer1@server1`` 
+Desde la raspi ejecutar  
+
+``ssh -fNR 2020:localhost:22 userDeServer1@server1`` 
 
 Luego desde un ``server2`` podes ingresar a la raspberry ejecutando ``ssh raspi@server1 -p2020``
 
