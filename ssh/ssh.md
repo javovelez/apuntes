@@ -67,7 +67,7 @@ Desde `server2`:
     ssh -R 2020:localhost:22 user@host3
 con esto apunto el puerto 2020 de ``host3`` al puerto 22 de localhost que en este caso es ``host2``
 
-Luego desde mi máquin:
+Luego desde mi máquina:
 
 ``ssh -p 2020 userhost2@host3``
 
