@@ -36,10 +36,13 @@ Sino podemos loguernos usando ``ssh-copy-id  usuario@host`` y automáticamente c
 
 ## Correr comando en un host remoto
 Este el -t implica que entrará al servidor, ejecutará el comando e inmediatamente se termine de ejecutar volvera al host local
-    ssh -t root@192.168.1.50 ls
+
+``ssh -t root@192.168.1.50 ls``
+
 ## SSH como proxy (tunel ssh)
 
-    ssh -D puerto user@host 
+``ssh -D puerto user@host ``
+
 Esto crea un sock en el sevidor destino que escucha ese puerto.
 Luego debemos configurar el proxy de nuestro navegador para salir por el
 
