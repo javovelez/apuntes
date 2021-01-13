@@ -58,3 +58,14 @@ para traer cambios que están en el repositorio ejecutamos
 Para ir a un determinado commit previo:
 
 ``git reset a330d9c4af1b007fe1436f979ff0b9f66613136e --hard``
+
+si quiero actualizar un repositorio local en base al remoto tengo al menos 3 opciones.
+
+1. git pull
+2. Si tengo problemas con cambios locales:  
+``git fetch origin  ``  
+``git reset --hard origin/master``  
+3. Si quiero preservar los cambios locales y al mismo tiempo los remotos (si no existen conflictos)  
+``git fetch origin  ``  
+``git merge``
+
