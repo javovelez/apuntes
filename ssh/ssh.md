@@ -88,3 +88,24 @@ Desde la raspi ejecutar
 
 Luego desde un ``server2`` podes ingresar a la raspberry ejecutando ``ssh raspi@server1 -p2020``
 
+# Transferir archivos
+~~~
+scp fichero-a-subir.html usuario@www.example.com:ruta/destino/servidor/remoto
+
+scp nombre_archivo usuario@servidor:ruta_servidor_donde_colocar_archivo
+
+scp archivo_a_subir.zip root@example.com:/var/www/example.com/
+
+~~~
+
+Para subir una carpeta
+
+~~~
+scp -r csv-data root@2.1.3.0:/var/www/example.com/storage/
+~~~
+
+Para descargarla
+~~~
+scp -r root@161.0.0.1:/var/www/desarrolloweb.com/carpeta/ ruta_destino_en_local/
+~~~
+
