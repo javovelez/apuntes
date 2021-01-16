@@ -30,7 +30,7 @@ Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la 
 
 ``df -h`` Para ver el espacio ocupado/disponible en las particiones. La h es para ser leida por un humano (en MB, KB, etc )
 
-``/proc/mdstat``  Para saber el estado de RAID 1. Si devuelve algo con ``f`` es de Fail
+``cat /proc/mdstat``  Para saber el estado de RAID 1. Si devuelve algo con ``f`` es de Fail
 
 ## Comandos de usuario y permisos
 
@@ -92,3 +92,81 @@ sudo systemctl start stop status odoo
 Por último tenemos el comando ``status`` que nos permite ver el estado en el que se encuentra un servicio.
 
 
+## Cómo comprimir y descomprimir archivos en Linux usando el terminal
+
+### Ficheros tar
+
+``tar -cvf archivo.tar /dir/a/comprimir/`` 
+
+
+* -c : indica a tar que cree un archivo.
+
+* -v : indica a tar que muestre lo que va empaquetando.
+
+* -f : indica a tar que el siguiente argumento es el nombre del fichero.tar
+
+En cambio para poder desempaquetar los ficheros .tar, utilizamos el siguiente comando:
+
+
+
+``tar -xvf archivo.tar``
+
+
+* -x : indica a tar que descomprima el fichero.tar.
+
+* -v : indica a tar que muestre lo que va desempaquetando.
+
+* -f : indica a tar que el siguiente argumento es el nombre del fichero a desempaquetar.
+
+Si se quiere ver el contenido de un fichero .tar, se utiliza el siguiente comando:
+
+``tar -tf archivo.tar``
+
+* -t : Lista el contenido del fichero .tar
+
+* -f : indica a tar que el siguiente argumento es el nombre del fichero a ver.
+
+### Ficheros gz
+
+Para comprimir ficheros en formato .gz, se utiliza el siguiente comando:
+
+``gzip -9 fichero``
+
+* -9 : le indica a gz que utilice el mayor factor de compresión posible.
+
+Para descomprimir ficheros .gz, se utilizara el siguiente comando:
+
+``gzip -d fichero.gz``
+
+-d : indica descompresión
+
+### Ficheros tar.gz
+
+``tar -czfv archivo.tar.gz ficheros``
+
+* -c : indica a tar que cree un archivo
+
+* -z : indica que use el compresor gzip
+
+* -f : indica a tar que el siguiente argumento es el nombre del fichero.tar
+
+* -v : indica a tar que muestre lo que va empaquetando
+
+Para descomprimir ficheros con extensión tar.gz, se usa el siguiente comando:
+
+``tar -xzvf archivo.tar.gz``
+
+* -x : le dice a tar que extraiga el contenido del fichero tar.gz
+
+* -z : le indica a tar que esta comprimido con gzip
+
+* -v : va mostrando el contenido del fichero
+
+* -f : le dice a tar que el siguiente argumento es el fichero a descomprimir.
+
+Para poder ver el contenido de un fichero comprimido en tar.gz, se usa el siguiente comando:
+
+``tar -tzf archivo.tar.gz``
+
+Fuente: 
+https://www.ubuntizando.com/como-comprimir-y-descomprimir-archivos-en-linux-usando-el-terminal/
