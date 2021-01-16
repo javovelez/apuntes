@@ -49,3 +49,7 @@ Para restaurar
 ``createdb -O username maybeOtherName``
 
 ``psql  -W  TIMSATEST < TIMSATEST.sql``
+
+El filestore (la carpeta donde se guardan todos los archivos binarios como imágenes) se encuentra en:
+
+``/opt/odoo/.local/filestore``
