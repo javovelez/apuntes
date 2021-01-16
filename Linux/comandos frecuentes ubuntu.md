@@ -170,3 +170,9 @@ Para poder ver el contenido de un fichero comprimido en tar.gz, se usa el siguie
 
 Fuente: 
 https://www.ubuntizando.com/como-comprimir-y-descomprimir-archivos-en-linux-usando-el-terminal/
+
+
+## Liberar memoria inutilizada
+
+``sudo sync``  
+``sudo sysctl -w vm.drop_caches=3``

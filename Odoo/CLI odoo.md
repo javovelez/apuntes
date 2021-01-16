@@ -53,3 +53,7 @@ Para restaurar
 El filestore (la carpeta donde se guardan todos los archivos binarios como imágenes) se encuentra en:
 
 ``/opt/odoo/.local/filestore``
+
+Inicio de odoo 13 en mi wsl:
+
+/home/javo/odoo13/odoo-venv/bin/python3 /home/javo/odoo13/odoo13/odoo-bin -c /home/javo/odoo13/odoo13.conf -d timsatest -u timsa_test --dev xml
