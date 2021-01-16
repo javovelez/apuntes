@@ -1,5 +1,17 @@
 # GIT y Github
 
+Instalación
+
+``git apt-get update``
+
+``git apt-get upgrade``
+
+``sudo apt-get install git``
+
+Para verificar:
+
+``git --version``
+
 Para llevar todos los archivos del directorio que estoy parado a stage area
 
 ``git add .``
@@ -69,3 +81,6 @@ si quiero actualizar un repositorio local en base al remoto tengo al menos 3 opc
 ``git fetch origin  ``  
 ``git merge``
 
+``git show`` Nos muestra todos los cambios históricos hechos.
+
+``git log nombreDeArchivo`` nos muestra el historial de cambios del archivo indicado

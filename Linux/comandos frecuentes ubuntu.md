@@ -32,6 +32,7 @@ Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la 
 
 ``cat /proc/mdstat``  Para saber el estado de RAID 1. Si devuelve algo con ``f`` es de Fail
 
+``clear`` para limpiar pantalla o ``ctrl+l``
 ## Comandos de usuario y permisos
 
 ``adduser --system --home=/opt/appx --group appx`` Agraga un system user. Este tiene la característica de no tener pass para iniciar sesión, no poder ingresar por ssh. Usado en general para que ese usuario inicie un proceso en el arranque.
