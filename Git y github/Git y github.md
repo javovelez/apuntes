@@ -12,9 +12,17 @@ Para verificar:
 
 ``git --version``
 
-Para llevar todos los archivos del directorio que estoy parado a stage area
+Para llevar todos los archivos del directorio que estoy parado a "stage area" (a la lista de archivos a los cuales les estoy siguiendo los cambios) ejecuto:
 
 ``git add .``
+
+``git rm archivo`` deja de trackear el archivo.
+
+``git rm --cached`` elimina lo que hay en ram cargado respecto al seguimiento de este archivo. Si yo previamente le había dado add al archivo y lo empecé a modificar, en ram está el seguimiento de ese archivo. Si solo le doy ``rm`` sin ``--cahed`` obtendré un mensaje de error.
+
+Para crear una rama
+
+`` ``
 
 Para moverme a otra rama
 
@@ -23,6 +31,14 @@ Para moverme a otra rama
 Para crear un commit (de lo previamente llevado a stage area)
 
 ``git commit -m "mensaje de commit"``
+
+[Documentación sobre buenos mensajes de commit](https://marcoelizalde.com/2020/10/17/como-escribir-excelentes-commits/)
+
+Si no agrego un mensaje voy a entrar a vim (editor de texto):
+
+``esc+i`` para insertar texto
+
+``esc+shift+zz`` para enviar el mensaje
 
 Para llevarlo al repositorio desde el que hice el commit
 
@@ -39,6 +55,8 @@ Esto supone que ya estamos hemos cargado nuestras credenciales previamente. Esto
 Para ver qué usuario está cargado podemos ejecutar
 
 ``git config user.name``
+
+``git config --list`` nos muestra las configuraciones que tenemos seteadas.
 
 Cuando hagamos push nos pedirá la contraseña de github. Para evitar esto podemos crear una clave ssh con el comando 
 
@@ -69,7 +87,7 @@ para traer cambios que están en el repositorio ejecutamos
 
 Para ir a un determinado commit previo:
 
-``git reset a330d9c4af1b007fe1436f979ff0b9f66613136e --hard``
+``git reset a330d9c4af1b007fe1436f979ff0b9f66613136e --hard`` si uso ``--soft`` el directorio de trabajo va al commit indicado pero mantiene los cambios ya trackeados en el stage para commitearlos.
 
 si quiero actualizar un repositorio local en base al remoto tengo al menos 3 opciones.
 
@@ -84,3 +102,23 @@ si quiero actualizar un repositorio local en base al remoto tengo al menos 3 opc
 ``git show`` Nos muestra todos los cambios históricos hechos.
 
 ``git log nombreDeArchivo`` nos muestra el historial de cambios del archivo indicado
+
+``git log --stat nombreDeArchivo`` Muestra el historial con más detalles.
+
+Si quiero ver los cambios usamosentre commits:
+
+``git diff   #### ####``  Donde #### son los fingerprint de los commits (ese identificador alfanumérico que representa el código). El orden en que pongo los fingerprints es importante.
+
+Puedo traer un archivo específico de un commit previo ejecutando:
+
+``git checkout #### nombreDeArchivo`` si llego a realizar un commit pierdo todo lo agregado posteriormente al #### usado.
+
+Para volver a la última versión:
+
+``git checkout master nombreDeArchivo``
+
+## Comentarios sobre rm checkout y reset
+
+El comando ``git rm`` elimina el archivo del stage pero no del historial ni del disco duro. ``git rm --force`` lo elimina del stage y del disco pero no del historial.
+
+Cuando ejecutamos ``git checkout ####`` nos permite mirar lo que había en el pasado pero podemos volver. Si ejecutamos ``git reset ####`` perdemos todos los coambios posteriores a ####.

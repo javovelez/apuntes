@@ -33,6 +33,13 @@ Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la 
 ``cat /proc/mdstat``  Para saber el estado de RAID 1. Si devuelve algo con ``f`` es de Fail
 
 ``clear`` para limpiar pantalla o ``ctrl+l``
+
+``ls`` para listar los archivos del directorio donde estoy parado. ``ls -l`` los muestra en forma de lista. ``ls -a`` muestra los archivos ocultos (los que su nombre empiezan con un punto). Puedo sumar los parámetros que les paso al comando. Por ejemplo ``ls -la`` muestra todos los archivos incluidos los ocultos en forma de lista.
+
+``history`` nos muestra el historial de comandos ejecutados.
+
+``rm`` para eliminar un archivo. ``rm -r`` para eliminar una carpeta con todo su contenido. la ``r`` es de recursivo. par aforzar la eliminación ejecuto ``rm -rf``.
+
 ## Comandos de usuario y permisos
 
 ``adduser --system --home=/opt/appx --group appx`` Agraga un system user. Este tiene la característica de no tener pass para iniciar sesión, no poder ingresar por ssh. Usado en general para que ese usuario inicie un proceso en el arranque.
