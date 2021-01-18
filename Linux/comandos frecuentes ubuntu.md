@@ -24,6 +24,7 @@ Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la 
 
 ``du -h archivo``  para saber el tamaño de un archivo.
 
+``alias nombreComando="ls -a"`` Cuando ejecute ``nombreComando`` se ejecutará ``ls -a``
 ## Opciones de disco
 
 ``sudo lsblk -fm``   Para ver los discos y sus particiones
