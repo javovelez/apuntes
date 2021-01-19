@@ -1,5 +1,6 @@
 ﻿# Comandos ubuntu
 
+
 ``sudo -s`` Cambia a usuario root
 
 ``cat`` Para mostrar el contenido de un archivo de texto
@@ -11,6 +12,8 @@
 ``tail -f`` la f es de follow (seguir) lo que muestra en tiempo real lo que se va agragando al archivo. Su uso típico es para ver logs en tiempo real.
 
 ``tail -f /var/log/appx/appx.log`` Para ver el log de una aplicación x
+
+``head`` similar a tail pero muestra el principio del archivo.
 
 ``man`` es un comado para conocer el manual de un comando por ejemplo ``man tail`` nos trae la explicaición de como usar el comando tail
 
@@ -25,6 +28,32 @@ Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la 
 ``du -h archivo``  para saber el tamaño de un archivo.
 
 ``alias nombreComando="ls -a"`` Cuando ejecute ``nombreComando`` se ejecutará ``ls -a``
+
+``touch nombreDeArchivo`` Crea archivo de texto
+
+``pwd`` nos indica por pantalla en qué directorio estamos parados.
+
+
+``cd -`` me perimite volver al último directorio que estaba.
+
+``history`` nos muestra el historial de comandos ejecutados.
+
+Si ejecuto ``!numeroDeComandoHistorial`` se vuelve a ejecutar el comando.
+
+``clear`` para limpiar pantalla o ``ctrl+l``
+
+``ls`` para listar los archivos del directorio donde estoy parado. ``ls -l`` los muestra en forma de lista. ``ls -a`` muestra los archivos ocultos (los que su nombre empiezan con un punto). Puedo sumar los parámetros que les paso al comando. Por ejemplo ``ls -la`` muestra todos los archivos incluidos los ocultos en forma de lista. El modificador ``-t`` ordena los archivos por fecha de modificación. ``-x`` ordena por nombre y extención. ``-R`` para listar contenido de los directorios y subdirectorios.
+
+
+``rm`` para eliminar un archivo. ``rm -r`` para eliminar una carpeta con todo su contenido. la ``r`` es de recursivo. par aforzar la eliminación ejecuto ``rm -rf``.
+
+``rmdir``para eliminar un directorio.
+
+``cp`` para copiar un archivo de un directorio a otro
+
+``mv`` para mover un archivo o directori. Tambié se usa para cambiar de nombre a archivo o directorio.
+
+
 ## Opciones de disco
 
 ``sudo lsblk -fm``   Para ver los discos y sus particiones
@@ -33,13 +62,7 @@ Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la 
 
 ``cat /proc/mdstat``  Para saber el estado de RAID 1. Si devuelve algo con ``f`` es de Fail
 
-``clear`` para limpiar pantalla o ``ctrl+l``
 
-``ls`` para listar los archivos del directorio donde estoy parado. ``ls -l`` los muestra en forma de lista. ``ls -a`` muestra los archivos ocultos (los que su nombre empiezan con un punto). Puedo sumar los parámetros que les paso al comando. Por ejemplo ``ls -la`` muestra todos los archivos incluidos los ocultos en forma de lista.
-
-``history`` nos muestra el historial de comandos ejecutados.
-
-``rm`` para eliminar un archivo. ``rm -r`` para eliminar una carpeta con todo su contenido. la ``r`` es de recursivo. par aforzar la eliminación ejecuto ``rm -rf``.
 
 ## Comandos de usuario y permisos
 
@@ -100,6 +123,22 @@ Para habilitar que un servicio se ejecute al inicio debemos ejecutar ``sudo syst
 sudo systemctl start stop status odoo
 Por último tenemos el comando ``status`` que nos permite ver el estado en el que se encuentra un servicio.
 
+
+## Comandos avanzados
+
+``grep palabraABuscar archivo`` trae las líneas del archivo que contengan la palabra a buscar. ``-i`` para que no sea case sensitive.
+``sed`` Screen Editor, tratamiento de flujos de caracteres. Este comando nos permite reemplazar una expresión por otra.
+ejemplos:
+
+``sed ‘s/hanks/selleck/g’ dump1.sql'`` = [comando][subcomando- sustitución][expresión original][nueva expresión][modificador-(/g de global, indica que tiene que hacerse a lo largo de todo el flujo)][Indicar cual es el flujo a utilizar (Archivo de texto)]
+SED no modifica el archivo, lo que hace es crear un nuevo flujo con la modificación
+
+Para eliminar la ultima linea podemos utilizar:
+``sed ‘$d’ nuevasPelis.csv`` = [Comando][’$sub-comando’][archivo]
+
+``awk`` Trataminento de texto delimitado, este comando sirve para trabajar con archivos de textos delimitados por comas.
+
+``awk -F ‘;’ ‘{ print $1}’ nuevasPelis.csv``
 
 ## Cómo comprimir y descomprimir archivos en Linux usando el terminal
 
