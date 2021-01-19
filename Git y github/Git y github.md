@@ -132,6 +132,8 @@ También podemos ejecutar:
 
 ``git log --all --graph --decorate --oneline`` Lo muestra más gráfico.
 
+``git log  --oneline`` se usa bastante y muestra el resumen de todos los commitsu que hubieron en la rama que estoy parado.
+
 Si quiero ver los cambios usamosentre commits:
 
 ``git diff   #### ####``  Donde #### son los fingerprint de los commits (ese identificador alfanumérico que representa el código). El orden en que pongo los fingerprints es importante.
@@ -203,3 +205,27 @@ Luego puedo eliminar la rama x y todos los cambios quedaron en master.
 
 ``git branch -D x``
 
+##  Stash
+
+El stash me guarda el estado actual del WIP (work in progress). El wip son todos los cambios que he realizado desde el último commit estén en satage o no. Una vez guardado el wip con ``git stash`` puedo ver los stash con ``stash list``. Ahora puedo hacer checkout a otras ramas consultar algo. Ahora puedo volver a la rama master y ejecuto ``git stash pop``.
+
+También puedo volcar el wip a otra rama ejecutando primero ``git stash`` y luego ``git stash nuevaRama``. Crea otra rama con el wip y deja la rama anterior en sin wip. Luego en la nueva rama puedo realizar un commit e impactarán los cambios de wip solo en la nueva rama.
+
+Para eliminar un wip guardado con stash ejecuto ``git stash drop``
+
+## Clean
+
+Cuando por error creara o copiara archivos en el respositorio puedo ejecutar ``git clean -f`` para eliminarlos. Se recomienda previamente ejecutar ``git clean --dry-run`` para observar qué archivos van a ser borrados. 
+
+Archivos con el mismo nombre que otros que estén siendo trackeados no serán eliminados. Tampoco se eliminirá cualquier archivo que sea excluido de trackeo por .gitignore.
+
+## Cherry-pick
+
+Puedo traer commits de otras ramas sin traer el head de la otra ram, o sea traigo commits viejos de otras ramas. Para esto ejecuto:
+
+``git cherry-pick ####``  y trerá a la rama actual el commit ####
+
+## Amend
+
+Si hice un commit que debía contener más cambios de los que realmente hubo, puedo realizar los cambios faltantes y ejecutar ``commit --amend``y me fusiona los cambios actuales al commit anterior.
+Tambien me da la posibilidad de cambiar el mensaje.
