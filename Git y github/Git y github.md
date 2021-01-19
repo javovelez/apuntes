@@ -177,3 +177,14 @@ Para enviarlo a github:
 ``git push origin --tags``
 
 ``git tag -d v0.1`` Para borrar un tag. En este caso para reflejarlo en el repo remoto ejecutamos ``git push origin :refs/tags/v0.1``
+
+## github pages
+
+Para tener una github page debo crear un repositorio con en el nombre nombreDeUsuario.github.io de usuario. Dentro de el repositorio debo crear el index.html.
+
+Luego en las settings del proyecto debo elegir la branch que se va a linkear con la dirección
+nombreDeUsuario.github.io
+
+## Rebase
+
+Rebase es similar a un merge solo que fusiona las ramas de manera que parezca que todos los commits sucedieron en la misma rama. No queda histora de la bifurcación ni del merge.
