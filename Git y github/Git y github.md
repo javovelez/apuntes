@@ -61,7 +61,9 @@ Luego dentro de  /home/user/.ssh encontraremos la clave pública llamada d_rsa.p
 
 ``cat ~/.ssh/id_rsa.pub``
 
-Luego copiamos el resultado y lo pegamos en donde nos indica github.
+Luego copiamos el resultado y lo pegamos en donde nos indica github que el origin esté configurado con el link de ssh y no con el link de https. En mi caso no pude cambiarlo así que luego de hacer un push al remoto con usuario y contraseña eliminé mi repositorio local y lo cloné nuevamente con el link de ssh.
+
+Es importante para que luego funcione el push con la key y no te pida usuario y contraseña 
 
 Para ver el nombre del repositorio remoto:
 
@@ -188,3 +190,16 @@ nombreDeUsuario.github.io
 ## Rebase
 
 Rebase es similar a un merge solo que fusiona las ramas de manera que parezca que todos los commits sucedieron en la misma rama. No queda histora de la bifurcación ni del merge.
+
+Para realizarlo estando en una rama x ejecuto la siguiente serie de comandos:
+
+``git rebase master`` Esto me traerá los cambios realizados en master a la rama x cambiando la historia de la rama como si hubieramos creado la rama desde el head más reciente.
+
+Ahora desde la rama master:
+
+``git rebase x`` esto me traerá los cambios de la rama x a master.
+
+Luego puedo eliminar la rama x y todos los cambios quedaron en master.
+
+``git branch -D x``
+
