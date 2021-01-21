@@ -224,3 +224,68 @@ https://www.ubuntizando.com/como-comprimir-y-descomprimir-archivos-en-linux-usan
 
 ``sudo sync``  
 ``sudo sysctl -w vm.drop_caches=3``
+
+## Crontab
+
+Para editar crontab:
+
+``crontab -e`` Para mostrar la tabla ``crontab -l``
+
+
+
+Formato básico de una tarea en el Crontab, básicamente consta de dos mitades:
+
+1.  El momento en el cual se ejecutará la tarea del Crontab:
+	Cada minuto: En intervalos de entre 0 a 59.  
+	Cada hora: En intervalos de entre 0 a 23.  
+	Cada día: En intervalos de entre 0 a 31.  
+	Cada mes: En intervalos de entre 0 a 12 (0==12 y 12 == Diciembre).  
+	Cada día de la semana: En intervalos de entre 0 a 7 (0==7 y 7 == domingo).  
+
+
+	~~~
+	* * * * * comando ha ser ejecutado
+	- - - - -
+	| | | | |
+	| | | | ----- Día de la semana (0 - 7)
+	| | | ------- Mes (1 - 12)
+	| | --------- Día del mes (1 - 31)
+	| ----------- Hora (0 - 23)
+	------------- Minuto (0 - 59)
+	~~~
+	Intervalos de tiempo  
+	Ejecutar un script de lunes a viernes a las 	2:30 horas:  
+
+	~~~
+	30 2 * * 1-5 /bin/ejecutar/script.sh
+	~~~
+	Ejecutar un script de lunes a viernes cada 	10 minutos desde las 2:00 horas durante una 	hora:
+	~~~
+	0,10,20,30,40,50 2 * * 1-5 /bin/ejecutar/	script.sh
+	~~~
+
+	Esto quizá puede ser largo. La sintaxis de 	crontab permite lo siguiente. Imaginemos que 	queremos ejecutarlo cada 5 minutos:
+	~~~
+	*/5 2 * * 1-5 /bin/ejecutar/script.sh
+	~~~
+
+2.  El comando BASH
+	~~~
+	* * * * * /bin/ejecutar/script.sh
+	~~~
+
+[Fuente](https://geekytheory.com/programar-tareas-en-linux-usando-crontab)
+
+**Palabras reservadas**
+
+@reboot: se ejecuta una única vez al inicio.
+@yearly/@annually: ejecutar cada año.
+@monthly: ejecutar una vez al mes.
+@weekly: una vez a la semana.
+@daily/@midnight: una vez al día.
+@hourly: cada hora.
+
+Por ejemplo, para ejecutar el script cada hora:
+
+``@hourly /bin/ejecutar/script.sh
+``

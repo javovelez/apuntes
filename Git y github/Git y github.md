@@ -20,6 +20,7 @@ Para llevar todos los archivos del directorio que estoy parado a "stage area" (a
 
 ``git rm --cached`` elimina lo que hay en ram cargado respecto al seguimiento de este archivo. Si yo previamente le había dado add al archivo y lo empecé a modificar, en ram está el seguimiento de ese archivo. Si solo le doy ``rm`` sin ``--cahed`` obtendré un mensaje de error.
 
+``git comandoX --help`` nos muestra ayuda del comando.
 
 Para crear un commit (de lo previamente llevado a stage area)
 
@@ -84,6 +85,10 @@ Para moverme a otra rama
 Para ver las ramas creadas:
 
 ``git branch``
+
+Para ver las ramas remotas:
+
+``git branch -r``
 
 Para cambiarle el nombre a una rama ejecutamos:
 
@@ -229,3 +234,41 @@ Puedo traer commits de otras ramas sin traer el head de la otra ram, o sea traig
 
 Si hice un commit que debía contener más cambios de los que realmente hubo, puedo realizar los cambios faltantes y ejecutar ``commit --amend``y me fusiona los cambios actuales al commit anterior.
 Tambien me da la posibilidad de cambiar el mensaje.
+
+## Reset y reflog
+
+Ejecutando ``git reflog``tenemos un log más completo que nos sirve para casos de emergencia. Nos permite traer el head en el estado previo al siguiente commit con todos los cambios previos a este.
+
+Con ``git reser --SOFT ####`` resetea a #### pero manteniendo el stage previo al próximo commit. Es equivalente a ``git reser HEAD{X}`` (el HEAD{x} lo saco de reflog)
+
+Con ``git reser --HARD ####`` resetea a #### tal cual despues del último commit.
+
+## Grep 
+
+Con ``git grep palabra`` obtengo todas las líneas donde sale 'palabra'. Si agrego el modificador ``-n`` me indica en qué líneas de qué archivos sale. El modificador ``-c`` cuenta la cantidad de veces que aparece esa palabra.
+
+Si tengo caracteres especiales debo poner la palabra a buscar entre comillas dobles.
+
+Si lo uqe quiero buscar está en la historia de los commits  uso ``git log -S palabra`` y nos trae todo lo que esté relacionado con 'palabra'
+
+## Comandos alias dentro de git
+Un ejemplo:
+
+``git config --global alias.stats “shortlog -sn --all --no-merges”``
+
+Ahora cuando ejecute ``git stats`` se ejecutará ``shortlog -sn --all --no-merges``
+
+Sobre el comando que uso en el ejemplo:
+
+NOTAS CLASE:
+
+``git shortlog``: Ver cuantos commits han realizado los miembros del equipo
+``git shortlog -sn``: Muestra cuantos commits ha realizado cada miembro del equipo
+``git shortlog -sn --all``: Todos los commits (también los borrados)
+``git shortlog -sn --all --no-merges``: muestra las estadisticas de los comigs del repositorio donde estoy
+
+## Blame
+
+``git blame archivo`` vemos línea por lína quién escribió cada línea. Con el modificador ``-c`` indenta mejor la salida por consola.  ``-L35,53`` nos muestra solo lo que pasó entre esas líneas.
+
+
