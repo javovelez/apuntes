@@ -1,0 +1,18 @@
+Cuando reseteo configuración del router debo desactivar todos las interfases de red de  mi máquina para que me deje conectarmer al router por winbox
+
+
+1- DHCP client en ether1 ip dinámica
+2- Creo bridge LAN
+3- Creo ports en bridge
+4- ip/addresses creo ip para el bridge
+5- Creo DHCP server sobre bridge
+5- Debo crear máscara para que LAN pueda salir a WAN -> IP/firewall/~NAT/+ 
+	~general chain=srcnat out. interface=ether1
+	~Action maskerate
+
+Fuentes:
+https://www.youtube.com/watch?v=3rOtEVXZ0Lc&ab_channel=TikAcademy
+https://www.youtube.com/watch?v=03hwf2XALMA&ab_channel=GlobalysIT.Distributor
+https://www.youtube.com/watch?v=v3Z9PFvrIts&ab_channel=KeftwareTel
+https://www.youtube.com/watch?v=6SVeabwAoAQ&ab_channel=MacroticsSAS
+https://www.youtube.com/watch?v=76nK1LXyPMA&list=PLCvN_Pl1Blxh2ejJCGI4T-xzL3VrYtsKS&ab_channel=TKSJa

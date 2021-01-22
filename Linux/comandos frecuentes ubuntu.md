@@ -126,11 +126,16 @@ Por último tenemos el comando ``status`` que nos permite ver el estado en el qu
 
 ## Comandos avanzados
 
-``grep palabraABuscar archivo`` trae las líneas del archivo que contengan la palabra a buscar. ``-i`` para que no sea case sensitive.
+``grep palabraABuscar archivo`` trae las líneas del archivo que contengan la palabra a buscar. ``-i`` para que no sea case sensitive.  
+
+Si colocamos un ``$`` en el final forzamos a que busque líneas terminadas en la palabra a buscar.
+Si colocamos ``^`` al principio, forzamos a que busque líneas que comiencen con con la palabra buscada.
+
+
 ``sed`` Screen Editor, tratamiento de flujos de caracteres. Este comando nos permite reemplazar una expresión por otra.
 ejemplos:
 
-``sed ‘s/hanks/selleck/g’ dump1.sql'`` = [comando][subcomando- sustitución][expresión original][nueva expresión][modificador-(/g de global, indica que tiene que hacerse a lo largo de todo el flujo)][Indicar cual es el flujo a utilizar (Archivo de texto)]
+``sed ‘s/hanks/selleck/g’ dump1.sql'`` = [comando][subcomando- sustitución][expresión original][nueva expresión][modificador-(/g de global, indica que tiene que hacerse a lo largo de todo el flujo)][Indicar cual es el flujo a utilizar (Archivo de texto)] La ``s`` es de sustitución.
 SED no modifica el archivo, lo que hace es crear un nuevo flujo con la modificación
 
 Para eliminar la ultima linea podemos utilizar:
