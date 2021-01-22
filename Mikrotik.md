@@ -16,3 +16,11 @@ https://www.youtube.com/watch?v=03hwf2XALMA&ab_channel=GlobalysIT.Distributor
 https://www.youtube.com/watch?v=v3Z9PFvrIts&ab_channel=KeftwareTel
 https://www.youtube.com/watch?v=6SVeabwAoAQ&ab_channel=MacroticsSAS
 https://www.youtube.com/watch?v=76nK1LXyPMA&list=PLCvN_Pl1Blxh2ejJCGI4T-xzL3VrYtsKS&ab_channel=TKSJa
+
+ssh admin@192.168.88.1
+	/interface print
+	
+	
+Para resetear (dentro de winbox): 
+	System/ResetCionfiguration
+		Seleccionamos los dos últimos items y reseteamos.
