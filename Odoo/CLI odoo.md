@@ -102,3 +102,11 @@ $ git reset --hard 12.0-before-update-$(date --iso)
 ~~~
 
 Tiro la base de datos dañada y restauro el bakup.
+
+# Odoo Shell
+~~~
+/home/javo/odoo13/odoo-venv/bin/python3 /home/javo/odoo13/odoo13/odoo-bin shell -d iss
+~~~
+
+Para salir de la consola presionamos ``ctrl+D``
+
