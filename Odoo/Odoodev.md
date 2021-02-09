@@ -7,8 +7,14 @@ Un módulo se crea sobre una carpeta que debe contener como mínimo los siguient
 2. ``__manifest__.py`` en el cual se declaran el nombre del módulo, dependencias, datos, vistas y otras configuraciones.
 
 
-El directorio "sobre" (../) al que contiene los archivos __init__.py y __manifest__.py debe estar dentro de la lista del addonspath del archivo de configuración. El nombre técnico del módulo será el nombre del directorio que contiene los archivos mencionados.
+El directorio que contiene los directorios que contienen los archivos __init__.py y __manifest__.py debe estar dentro de la lista del addonspath del archivo de configuración. El nombre técnico del módulo será el nombre del directorio que contiene los archivos mencionados.
 
+Ejemplo:
+
+~~~
+~/extra-addons/mis_modulos
+~~~ 
+Ese directorio deberá estar en el addons path. Todos los directorios dentro de este que contengan los archivos __init__.py y __manifest__.py serán vistos por odoo.
 
 Manifest en detalle:
 
@@ -21,8 +27,7 @@ application: A Boolean flag, declaring whether the addon module should be featur
 
 ~~~
 
-In a real-world scenario, we recommend that you also use the additional keys, since they
-are relevant for the Odoo App Store:
+Es recomendable también que se completen los siguientes keys que son relevantes en la odoo app store.
 
 ~~~
 summary: A string displayed as a subtitle for the module.  
@@ -31,7 +36,7 @@ license: By default considered to be LGPL-3. website: A URL to get more informat
 category: A string with the functional category of the module, which defaults to Uncategorized. A list of existing categories can be found in the security Groups form (at Settings | User | Groups), in the Application field drop-down list.  
 ~~~
 
-Para generar un esqueleto del módulo puedo usar el comando ``scaffold /pathAOdoo/odoo/odoo.bin scaffold nombre_del_modulo`` Lo debo ejecutar parado en el directorio en el que voy a crear el módulo.
+Para generar un esqueleto del módulo puedo usar el comando ``.../pathAOdoo/odoo/odoo.bin scaffold nombre_del_modulo``. Lo debo ejecutar con el virtualevn corespondiente en caso de que se use uno, y parado en el directorio en el que voy a crear el módulo  ya que crea todos los templates con el string que le pasamos al comando scaffold  como argumento de directorio. 
 
 Para comenzar el desarrolo de un módulo primero que editaremos es "views/nombreDeLaVista.xml" que contendrá las vistas del módulo y crearemos el topmenu el cual es el punto de entrada a esta aplicación.
 
@@ -85,10 +90,7 @@ Luego creamos los tipos de usuario dentro de la categoría
     </record>
 ~~~~
 
-implied_ids is a one-to-many relational field, and contains a list of groups that
-will also apply to users belonging to this group. It uses a special syntax that will
-be explained in Chapter 5, Import, Export, and Module Data. In this case, we are
-using code 4 to add a link to base.group_user, the basic internal user group.
+implied_ids is a one-to-many relational field, and contains a list of groups that will also apply to users belonging to this group. It uses a special syntax that will be explained in Chapter 5, Import, Export, and Module Data. In this case, we are using code 4 to add a link to base.group_user, the basic internal user group.
 
 Luego configuramos control de acceso de cada grupo con el archivo ir.model.acces.csv
 
@@ -97,7 +99,6 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_certificate_user,certificatesUser,model_certificates_certificates,certificates_group_user,1,0,0,0
 access_book_manager,certficatesManager,model_certificates_certificates,certificates_group_manager,1,1,1,1
 ~~~
-
 
 ## Record rules o Reglas de registro.
 

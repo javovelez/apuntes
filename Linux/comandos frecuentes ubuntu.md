@@ -5,6 +5,8 @@
 
 ``cat`` Para mostrar el contenido de un archivo de texto
 
+``less`` como cat pero paginado
+
 ``tail`` Muestra las últimas líneas de un archivo
 
 ``tail -n 100`` muestra las últimas 100 línas
