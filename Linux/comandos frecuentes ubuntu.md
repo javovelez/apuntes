@@ -316,4 +316,4 @@ Si separo comandos con ; se ejecutan de izquierda a derecha
 
 Si separo comandos con & se ejecutan de manera independiente
 
-o con && si falla el primero se ejecuta el segundo
+o con && si falla el primero no se ejecuta el segundo
