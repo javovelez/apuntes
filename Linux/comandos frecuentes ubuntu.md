@@ -1,11 +1,14 @@
 ﻿# Comandos ubuntu
 
+[400 comandos](https://blog.desdelinux.net/mas-de-400-comandos-para-gnulinux-que-deberias-conocer/)
 
 ``sudo -s`` Cambia a usuario root
 
 ``cat`` Para mostrar el contenido de un archivo de texto
 
-``less`` como cat pero paginado
+``less`` como cat pero paginado. Para buscar puedo apretar "/palabra". con "n" o sift+n navego entre los resultados.
+
+
 
 ``tail`` Muestra las últimas líneas de un archivo
 
@@ -22,6 +25,10 @@
 ``top`` nos muestra un resumen de procesos con sus respecticos usos de recursos
 
 ``htop`` lo mismo que top pero mejorado.
+
+``w`` nos muestra usuarios logueados y procesos de ese usuario
+
+
 
 Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la aplicación
 
@@ -296,3 +303,17 @@ Por ejemplo, para ejecutar el script cada hora:
 
 ``@hourly /bin/ejecutar/script.sh
 ``
+
+## Operaciones con multiples comandos
+
+|  el envía la salida del comando de la izquierda hacia la entrada del de la derecha.
+
+Si coloco & al final de un comando este se ejecua en segundo plano
+
+``nohup nombreDeScript &`` se ejecuta en segundo plano y genera el archivo nohup.out que contiene la salida del log de ese comando.
+
+Si separo comandos con ; se ejecutan de izquierda a derecha
+
+Si separo comandos con & se ejecutan de manera independiente
+
+o con && si falla el primero se ejecuta el segundo
