@@ -773,3 +773,13 @@ res.partner(9, 31)
 res.partner(9, 31)
 ~~~
 
+    certificate_id = fields.Many2one(
+        'certificates.certificates', 
+        string='Certificado TIMSA', 
+        required=True, 
+        ondelete='restrict', 
+        )
+    cert_name = fields.Char(
+        'Certificado',
+        related='certificate_id.name', # no es delegate sino related
+    )
