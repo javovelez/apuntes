@@ -110,3 +110,8 @@ Tiro la base de datos dañada y restauro el bakup.
 
 Para salir de la consola presionamos ``ctrl+D``
 
+# Para usar el debugger de pycharm
+
+Debo instalar  ``pip3 install inotify`` y watchdog
+
+También tengo que habilitar a pycharm y python en firewall rules en "permitir que una aplicacion.."

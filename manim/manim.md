@@ -1,8 +1,16 @@
 # Manim
 
-``$ manim scene.py SquareToCircle -pql``
+Apuntes que tomo de distintos sitios para aprender a usar la librería de Python Manim.
 
-~~~
+Para instalar seguir los [estos pasos](https://docs.manim.community/en/latest/installation.html)
+
+Para utilizar la biblioteca Manim y por ende entender estos apuntes se deberá tener conocimientos del lenguaje de programación Python y del paradigma de Programación Orientado a Objetos (POO)
+
+**Primer ejemplo** (más adelante se dará una descripción detallada de cómo funciona):
+
+Supongamos el siguiente código de Python y guardado en un archivo llamado escena.py:
+
+~~~py
 from manim import *
 
 class SquareToCircle(Scene):
@@ -12,56 +20,67 @@ class SquareToCircle(Scene):
 
         square = Square()                    # Crea un cuadrado
         square.flip(RIGHT)                   # lo espeja horizontalmente
-        quare.rotate(-3 * TAU / 8)           # Lo rota un determinado ángulo
+        square.rotate(-3 * TAU / 8)           # Lo rota un determinado ángulo
 
         self.play(ShowCreation(square))      # anima la creación de un cuadrado
         self.play(Transform(square, circle)) # interpola el cuadrado hacia un círculo
         self.play(FadeOut(square))           # realiza un "fade out" de la animación
 ~~~
+
+A partir de este código se puede crear un render de la clase SquareToCircle (nombre elegido por el programador). Render es el proceso por el cual el código se convertirá en un video. Esto se realiza al ejecutar el siguiente comando en consola:
+
+~~~console
+$ manim escena.py SquareToCircle -pql
+~~~
+
+Y como resultado obtendremos la siguiente animación:
+
 ![Output](images/SquareToCircle.gif)
 
-Esto creará la escena de la clase SquareToCircle. Para renderizar todas las escenas de un .py se le pasa el parámetro ``-a``
+El parámetro ``-p `` provoca que se reproduzcael video resultante de la escena al finalizar de ser renderizada. Si en vez de reproducir el archivo queremos que abra el directorio que contiene el video usamos el parámetro ``-f``
 
-El parámetro ``-p `` indica que reproduzca la escena cuando termine. Si en vez de reproducir el archivo al finalizar el render queremos que nos abra el directorio que contiene el video usamos el parámetro ``-f``
+El parámetro ``-ql`` indica low quality (480p). Alternativamente se pueden utilizar los parámetros ``-qm`` (720p) ``-qh`` (1080p) ``-qk``(4k).
 
-El parámetro ``-ql`` indica low quality (480p) y ``-qm`` (720p) ``-qh`` (1080p) ``-qk``(4k).
+Manim genera por defecto archivos ``.mp4``. Si deseamos generar un archivo ``.gif`` usamos el parámetro ``-i``.
 
-Manim genera por defecto archivos .mp4. Si deseamos .gif usamos el parámetro ``-i``
+Para renderizar todas las escenas de un .py se utiliza el parámetro ``-a``.
 
 ## Bloques de construcción de Manim
 
-Existen tres diferentes conceptos que se pueden orquestar juntos para producir animaciones matemáticas. el objeto matemático (``mobject``) la animación y la escena. Cada uno de estos conceptos es una clase de python separada.
+Existen tres diferentes conceptos que se pueden orquestar juntos para producir animaciones matemáticas. El objeto matemático llamado ``mobject``, la animación y la escena. Cada uno de estos conceptos es una clase de python separada.
 
 ### Mobject
 
-Es el bloque base de construcción de animaciones. Representa un objeto que puede ser mostrado en la pantalla como círculos, flechas, rectángulos y otros ejemplos más complicados como ejes cartecianos, funciones de graficación y gráficos de barra.
+Es el bloque base de construcción de animaciones. Representa un objeto que puede ser mostrado en la pantalla como círculos, flechas, rectángulos y otros ejemplos más complicados como ejes cartesianos, funciones de graficación y gráficos de barra.
 
-Existe una clase deribada de mObject llamada VMobject la cual usa ``graficos vectoriales`` (no en el sentido matemático sino en tenología utilizada para graficar como lo hace Ilustrator). 
+Existe una clase deribada de mobject llamada VMobject la cual usa ``graficos vectoriales``, que es la tecnología utilizada para representar figuras a través de vectores. Un ejemplo de software que trabaja principalmente con esta tecnología es Adobe Ilustrator. 
 
-Usualmente todo el código de un script Manim es colocado dentro del método ``construct()`` de una clase ``Scene``. Para mostrar un mobject en la pantalla llamamos al método ``add()`` de la escena. Esta es la manera de mostrar en pantalla un mobject cuando este no es animado. Para remover un mobject de la pantalla, llamamos al método ``remove()``.
+Usualmente todo el código de un script que usa manim para realizar animaciones se encuentra dentro de un método llamado ``construct()`` que a su vez se encuentra dentro de una clase que hereda de ``Scene``. Para mostrar un mobject en la pantalla llamamos al método ``add()`` de la escena. Esta es la manera de mostrar en pantalla un mobject cuando este no es animado. Para remover un mobject de la pantalla, llamamos al método ``remove()``.
 
-~~~
+Ejemplo de código:
+~~~py
 class CreatingMobjects(Scene):
     def construct(self):
-        circle = Circle()
-        self.add(circle)
-        self.wait(1)
-        self.remove(circle)
-        self.wait(1)
+        circle = Circle() # Se crea un mobject (círculo) 
+        self.add(circle) # Se agrega a la pantalla
+        self.wait(1) # Se muestra por un segundo
+        self.remove(circle) # Se remueve
+        self.wait(1) # Se muestra la pantalla vacía por un segundo
 ~~~
 
 ![Output](images/CreatingMobjects.gif)
 
+La lista completa de mobjects predefinidos se puede encontrar [aquí](https://docs.manim.community/en/latest/reference.html). Cabe aclarar que es posible crear mobjects personalizados.
 
-### Ubicando mobjects
+### Cómo ubicar mobjects en la pantalla.
 
-Por defecto los mobjects son colocados en el centro de la pantalla que se define como el origen de coordenadas. 
+Por defecto los mobjects son colocados en el centro de la pantalla que es definido como el origen de coordenadas. Para ubicar los mobjects en diferentes posición de la pantalla se pueden utilizar diferentes métodos que provee la clase mobject.
 
-Se puede usar el método ``shift()`` para mover las figuras en la pantalla. Para esto se pueden usar los argumentos UP, DOWN, RIGHT y LEFT.
+Por ejemplo, se puede usar el método ``shift()`` para indicar la posición en la que se ubicará una figuras en la pantalla. Para esto el método recibe los argumentos ``UP``, ``DOWN``, ``RIGHT`` y ``LEFT``.
 
 Ejemplo:
 
-~~~
+~~~py
 class Shapes(Scene):
     def construct(self):
         circle = Circle()
@@ -78,13 +97,13 @@ class Shapes(Scene):
 
 ![Output](images/Shapes.gif)
 
-Otras maneras de colocar objetos en la pantalla son ``move_to()``, ``next_to()``, y ``align_to()``
+Otros métodos para definir la posición de los mobjects en la pantalla son ``move_to()``, ``next_to()``, y ``align_to()``
 
-~~~
+~~~py
 class MobjectPlacement(Scene):
     def construct(self):
         circle = Circle()
-        square = Square() # podríamos haber ejecutado square.shift(LEFT) por ejemplo
+        square = Square() # podríamos haber ejecutado square.shift(LEFT) por ejemplo y ya se crea ubicado a la izquierda.
         triangle = Triangle()
 
         # Coloca el círculo dos unidades a la izquierda del origen
@@ -99,11 +118,11 @@ class MobjectPlacement(Scene):
 ~~~
 ![Output](images/MobjectPlacement.gif)
 
-### Agregando estilo a los mobjects
+### Cómo agregar estilo a los mobjects
 
-Los métodos más básicos son ``set_stroke()`` para configurar el estilo del borde y ``set_fill()`` para configurar el estilo del relleno.
+Los métodos más básicos para agregar estilos que poseen los mobjects son ``set_stroke()`` para configurar el estilo del borde y ``set_fill()`` para configurar el estilo del relleno.
 
-~~~
+~~~py
 class MobjectStyling(Scene):
     def construct(self):
         circle = Circle().shift(LEFT)
@@ -120,15 +139,15 @@ class MobjectStyling(Scene):
 
 ![Output](images/MobjectStyling.gif)
 
-Cuando utilizamos el método add() tenemos que tener en cuenta el orden en el que le entregamos los mobjects ya que este orden (de izquierda a derecha) representa el orden de aparición en pantalla por ende sabremos que objeto aparecerá encima de otro.
+Cuando utilizamos el método add() tenemos que tener en cuenta el orden en el que le entregamos los mobjects ya que este orden (de izquierda a derecha) representa el orden de aparición en pantalla. De esta manera sabremos que objeto aparecerá "encima" de otro.
 
 ### Animaciones.
 
 Generalmente se agrega animaciones a una escena con el método play().
 
-Las animaciones son procedimientos que realiza una interpolación entre dos mobjects. Por ejemplo. el método FadeIn(square) comienza con una con una versión totalmente transparente del cuadrado y la interpola gradualmente  a una versión totalmente opaca.
+Las animaciones son procedimientos que realizan una interpolación entre dos mobjects. Por ejemplo. el método FadeIn(square) comienza con una con una versión totalmente transparente del cuadrado y la interpola gradualmente a una versión totalmente sólida (sin transparencia).
 
-~~~
+~~~py
 class SomeAnimations(Scene):
     def construct(self):
         square = Square()
@@ -147,9 +166,9 @@ class SomeAnimations(Scene):
 ~~~
 ![Output](images/SomeAnimations.gif)
 
-Una propiedad de un mobject que puede ser cambiada puede ser animada. De hecho, cualquier método que cambia una propiedad de un mobject puede ser usada como una animación a través del uso de ``ApplyMethod``.
+Si una propiedad de un mobject puede ser modificada, entonces se puede realizar una animación de esa propiedad. De hecho, cualquier método que cambia una propiedad de un mobject puede ser usada para una animación a través del uso de ``ApplyMethod``.
 
-~~~
+~~~py
 class ApplyMethodExample(Scene):
     def construct(self):
         square = Square().set_fill(RED, opacity=1.0)
