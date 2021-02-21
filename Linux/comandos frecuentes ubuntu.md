@@ -28,7 +28,11 @@
 
 ``w`` nos muestra usuarios logueados y procesos de ese usuario
 
+``env`` nos muestra todas las variables de entorno
 
+``$PATH`` Nos muestra todos los directorios donde el SO busca los programas ejecutables que podemos llamar desde la línea de comandos. 
+
+``which comando``  nos muestra el directorio donde se guarda el comando pasado como argumento.
 
 Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la aplicación
 
@@ -145,6 +149,7 @@ Si colocamos ``^`` al principio, forzamos a que busque líneas que comiencen con
 ejemplos:
 
 ``sed ‘s/hanks/selleck/g’ dump1.sql'`` = [comando][subcomando- sustitución][expresión original][nueva expresión][modificador-(/g de global, indica que tiene que hacerse a lo largo de todo el flujo)][Indicar cual es el flujo a utilizar (Archivo de texto)] La ``s`` es de sustitución.
+
 SED no modifica el archivo, lo que hace es crear un nuevo flujo con la modificación
 
 Para eliminar la ultima linea podemos utilizar:
@@ -306,9 +311,9 @@ Por ejemplo, para ejecutar el script cada hora:
 
 ## Operaciones con multiples comandos
 
-|  el envía la salida del comando de la izquierda hacia la entrada del de la derecha.
+``|``  envía la salida del comando de la izquierda hacia la entrada del de la derecha.
 
-Si coloco & al final de un comando este se ejecua en segundo plano
+Si coloco ``&`` al final de un comando este se ejecua en segundo plano
 
 ``nohup nombreDeScript &`` se ejecuta en segundo plano y genera el archivo nohup.out que contiene la salida del log de ese comando.
 
@@ -317,3 +322,39 @@ Si separo comandos con ; se ejecutan de izquierda a derecha
 Si separo comandos con & se ejecutan de manera independiente
 
 o con && si falla el primero no se ejecuta el segundo
+
+## Scripting
+
+Primero se define que programa ejecutará el script. Lo más común es bash o python. Para definirlo la primer línea del archivo debe ser #!/bin/bash o la ruta al intérprete de python que querramos usar.
+
+Las variables simplemente se asignan con signo ``=``. Si quiero que sea de solo lectura debo comenzas con ``readonly`.
+
+mivariable=50
+
+Si quiero que la variable se asigne con el resultado de la ejecución de un comando:
+
+``mivariable="$(comando1 "$(comando2)")"``
+
+Para acceder a la variable creada:
+
+``echo $mivariable``
+
+Para crear funciones:
+
+~~~sh
+function nombreDeLaFucncion {
+	local readonly mensaje=$1 #crea una variable local de solo lectura llamada mensaje donde le asigna el primer argumento que se le da a la cunción
+}
+~~~
+
+Función if
+
+~~~sh
+if [[ ]]; then
+	echo "algo"
+fi
+
+~~~
+[fuente](https://www.atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/)
+
+
