@@ -22,3 +22,11 @@ Para saber los puerto publicados o denegados
     sudo ufw status
 Para denegar un puerto
     sudo ufw deny 22
+
+Para eliminar reglas
+sudo ifw delete deny 22
+
+o puedo numerar las reglas existentes y eliminar por número de regla
+
+    sudo ufw status munbered
+    sudo ufw delete (n°)

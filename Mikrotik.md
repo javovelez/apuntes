@@ -8,7 +8,10 @@ Cuando reseteo configuración del router debo desactivar todos las interfases de
 5- Creo DHCP server sobre bridge
 5- Debo crear máscara para que LAN pueda salir a WAN -> IP/firewall/~NAT/+ 
 	~general chain=srcnat out. interface=ether1
-	~Action maskerate
+	~Action masquerade
+
+!! Desde que tengo ip fija hice lo siguiente.
+-Desactivé el cliente dhcp en ether1 y agregue una dirección de ip fija a eth1
 
 Fuentes:
 https://www.youtube.com/watch?v=3rOtEVXZ0Lc&ab_channel=TikAcademy
@@ -16,6 +19,8 @@ https://www.youtube.com/watch?v=03hwf2XALMA&ab_channel=GlobalysIT.Distributor
 https://www.youtube.com/watch?v=v3Z9PFvrIts&ab_channel=KeftwareTel
 https://www.youtube.com/watch?v=6SVeabwAoAQ&ab_channel=MacroticsSAS
 https://www.youtube.com/watch?v=76nK1LXyPMA&list=PLCvN_Pl1Blxh2ejJCGI4T-xzL3VrYtsKS&ab_channel=TKSJa
+
+portfowarding :https://www.youtube.com/watch?v=XPamzNPwMK8&ab_channel=AbcXperts
 
 ssh admin@192.168.88.1
 	/interface print
