@@ -51,7 +51,7 @@ Luego debemos configurar el proxy de nuestro navegador para salir por el
 Desde mi máquina puedo acceder a un servidor ``server1`` pero no a `server2`. Pero desde ``server1`` si se puede acceder a ``server2``
 Si ejecuto el siguiente comando me voy a conectar al ``server2`` desde mi máquina pasando por ``server1`` como intermediario.
 
-``ssh -L 2002:host2:22 user@host1``
+``ssh -L 2020:host2:22 user@host1``
 
 El puerto 2020 se crea en mi máquina que apunta al puerto 22 de ``server2`` a través del ``server1``
 
