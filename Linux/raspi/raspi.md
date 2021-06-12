@@ -1,6 +1,6 @@
 Para entrar a la configuración:
 
-"""bash
+"""bash  
 sudo raspi-config
-"""
+"""  
 
