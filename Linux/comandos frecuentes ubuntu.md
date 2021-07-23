@@ -46,6 +46,7 @@ Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la 
 
 ``pwd`` nos indica por pantalla en qué directorio estamos parados.
 
+``file nombreDeArchivo`` nos dice el tipo de archivo
 
 ``cd -`` me perimite volver al último directorio que estaba.
 
