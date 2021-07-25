@@ -38,7 +38,7 @@ Si en .bashrc agrego ´´PATH=$PATH:/home/javo/bin´´ agrega al path ese direct
 
 Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la aplicación
 
-``find -name nombreDelArchivo`` para buscar un archivo a través del nombre.
+``find -name nombreDelArchivo`` para buscar un archivo a través del nombre.  También con ''``-type [df]`` busco directorios o archivos respectivamente
 
 ``du -h archivo``  para saber el tamaño de un archivo.
 
