@@ -28,9 +28,11 @@
 
 ``w`` nos muestra usuarios logueados y procesos de ese usuario
 
-``env`` nos muestra todas las variables de entorno
+``env`` o ``printenv`` nos muestra todas las variables de entorno
 
 ``$PATH`` Nos muestra todos los directorios donde el SO busca los programas ejecutables que podemos llamar desde la línea de comandos. 
+
+Si en .bashrc agrego ´´PATH=$PATH:/home/javo/bin´´ agrega al path ese directorio para también buscar comandos dentro de él.
 
 ``which comando``  nos muestra el directorio donde se guarda el comando pasado como argumento.
 
