@@ -38,7 +38,7 @@ Si en .bashrc agrego ´´PATH=$PATH:/home/javo/bin´´ agrega al path ese direct
 
 Si presiono la letra ``q`` dentro de ``man`` o ``top`` o ``htop`` Salimos de la aplicación
 
-``find -name nombreDelArchivo`` para buscar un archivo a través del nombre.  También con ''``-type [df]`` busco directorios o archivos respectivamente
+``find -name nombreDelArchivo`` para buscar un archivo a través del nombre.  También con ''``-type [df]`` busco directorios o archivos respectivamente ``-size 20M`` encuentra todos los mayores a 20MB
 
 ``du -h archivo``  para saber el tamaño de un archivo.
 
@@ -119,12 +119,13 @@ sudo unmount /media/NAS
 
 ## Procesos
 
-``Control + c`` 
+``Control + c`` para matar el proceso actual
+``Control+z`` para mandarlo a foreground``
 
 ``fg n`` n es el número de proceso y este comando trae ese proceso a primer plano 
 jobs para ver los procesos ejecutandose
 https://blog.carreralinux.com.ar/2016/09/procesos-en-segundo-plano-linux/
-ip a : muestra ip 
+ 
 
 ## Servicios con systemd
 
@@ -139,6 +140,17 @@ Para habilitar que un servicio se ejecute al inicio debemos ejecutar ``sudo syst
 sudo systemctl start stop status odoo
 Por último tenemos el comando ``status`` que nos permite ver el estado en el que se encuentra un servicio.
 
+## Comandos de red
+
+``ifconfig`` para ver la configuración de los adapatadores de red
+
+``netstat`` para ver la información de red resumida
+
+``traceroute dominio`` para ver la cantidad de equipos que nos conectamos para llegar a un determinado dominio
+
+``curl dominio`` trae el código de que devuelve la página consultada
+
+``wget dominio`` para descargar archivos de internet
 
 ## Comandos avanzados
 
@@ -146,7 +158,8 @@ Por último tenemos el comando ``status`` que nos permite ver el estado en el qu
 
 Si colocamos un ``$`` en el final forzamos a que busque líneas terminadas en la palabra a buscar.
 Si colocamos ``^`` al principio, forzamos a que busque líneas que comiencen con con la palabra buscada.
-
+Si agregamos la flag ``-c`` cuenta la cantidad de apariciones.
+Si agregamos la flag ``-v`` busca donde no aparezca la expresión pasada como parámetro.
 
 ``sed`` Screen Editor, tratamiento de flujos de caracteres. Este comando nos permite reemplazar una expresión por otra.
 ejemplos:
@@ -184,7 +197,7 @@ En cambio para poder desempaquetar los ficheros .tar, utilizamos el siguiente co
 
 * -x : indica a tar que descomprima el fichero.tar.
 
-* -v : indica a tar que muestre lo que va desempaquetando.
+* -v : indica a tar que muestre lo que va desempaquetando (verbose).
 
 * -f : indica a tar que el siguiente argumento es el nombre del fichero a desempaquetar.
 
