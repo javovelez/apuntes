@@ -125,7 +125,7 @@ sudo unmount /media/NAS
 ``fg n`` n es el número de proceso y este comando trae ese proceso a primer plano 
 jobs para ver los procesos ejecutandose
 https://blog.carreralinux.com.ar/2016/09/procesos-en-segundo-plano-linux/
- 
+``bg n`` reanudamos el proceso n pero dejandolo en segundo plano
 
 ## Servicios con systemd
 
