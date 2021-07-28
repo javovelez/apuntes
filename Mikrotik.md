@@ -1,4 +1,4 @@
-Cuando reseteo configuración del router debo desactivar todos las interfases de red de  mi máquina para que me deje conectarmer al router por winbox
+Cuando reseteo configuración del router debo desactivar todos las interfaces de red de  mi máquina para que me permita conectarme al router por winbox
 
 
 1- DHCP client en ether1 ip dinámica
@@ -11,7 +11,7 @@ Cuando reseteo configuración del router debo desactivar todos las interfases de
 	~Action masquerade
 
 !! Desde que tengo ip fija hice lo siguiente.
--Desactivé el cliente dhcp en ether1 y agregue una dirección de ip fija a eth1
+-Desactivé el cliente dhcp en ether1 y agregué una dirección de ip fija a eth1
 
 Fuentes:
 https://www.youtube.com/watch?v=3rOtEVXZ0Lc&ab_channel=TikAcademy
