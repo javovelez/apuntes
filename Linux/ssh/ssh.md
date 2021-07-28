@@ -44,7 +44,7 @@ Este el -t implica que entrará al servidor, ejecutará el comando e inmediatame
 ``ssh -D puerto user@host ``
 
 Esto crea un sock en el sevidor destino que escucha ese puerto.
-Luego debemos configurar el proxy de nuestro navegador para salir por el
+Luego debemos configurar el proxy de nuestro navegador o de nuestro sistema operativo. Si estamos en W10 hay que hacerlo por "opciones de internet -> conexiones -> configuración de LAN -> y en servidor proxy dejar vacío los campos y hacer click en opciones avanzadas. Dentro de opciones avanzadas rellenar el campo sock con ``localhost`` y el puerto que pasamos en el comando ssh
 
 ## Conectarse a servidor que no tengo acceso pero que esté en una red con un server al que si tengo acceso
 
