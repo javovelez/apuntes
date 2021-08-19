@@ -1,0 +1,33 @@
+https://github.com/Klerith/curso-VSCode/releases
+
+Mover lineas:   			   Alt + ↑ / ↓
+Mover indentación en bloque:   shift+tab
+Comentar linea:                ctrl+ç
+Comentar selección:			   shift+alt+a
+Agregar cursores: 			   ctrl+alt+arrow
+Agregar cursores arbitrarios:  alt+click
+sleccionar varias palabras:    selecciono una (doble click) luego ctrl+nueva palabra
+Seleccionar all ocurrencias:   ctrl+shift+L
+seleccionar palabra sobre      
+la que está el cursor:  	   shift+alt+leftArrow
+Undo last cursor operation:	   Ctrl+U 
+Buscar archivo:				   ctrl+shift+f
+copiar linea arriba/abajo:     alt+shift+arrow
+Eliminar línea:				   ctrl+shift+k
+ir a definición:			   ctrl+click
+ojear definición:			   alt+F12 
+Zen Mode:					   ctrl+k->z
+buscar archivo en modo zen:    ctrl+p
+cambiar de pestaña:			   ctrl+tab
+Poner en mayúscula:			   ctrl+shift+U
+Poner en minúscula:			   ctrl+shift+L
+Shortcuts:					   ctrl+k ctrl+s
+listar atributos y métodos:	   ctrl+shift+O /:
+Posicionarme al final          
+de una palabra:				   ctrl+rightArrow
+F2 refactor
+ctrl+shift+F	busca en todo el proyecto 
+
+ctrl+shif+p)
+wrap with abreviation :	Envuelve el texto con la etiqueta que escriba	 
+upper/lower
