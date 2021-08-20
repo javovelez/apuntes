@@ -1,5 +1,7 @@
 # **Gobernbanza de datos**
 
+# Unidad 1 Introducción a la IA
+
 ## **Preludio. ¿Qué hay de nuevo viejo? (documento 1)   **
 
 Aspectos básicos a entender para entender por qué hablamos de inteligencia artificial.
@@ -191,5 +193,95 @@ Por ejemplo, se recomienda: incubar, diseñar, desarrollar o contratar sistemas 
 
 ## Impacto de la ia en el trabajo (documento 8)
 
+Primero hace una comparación con el surgimiento de la imprenta y de cómo generó desigualdad.
+
+Luego habla de tres grandes tendencias vinculadas al impacto de la inteligencia artificial:
+1. Los trabajos no están en riesgo en el corto plazo y no hay certeza de lo que sucederá a largo plazo.
+2. Hay pocas publicaciones respecto a los nuevos trabajos que están surgiendo.
+3. EL desafío es automatizar para humanizar, reconvertir las fuentes de trabajos rutinarias o insalubres y fomentar el desarrollo de nuevas habilidades.
+
+Luego habla de lo mismo. Reemplazo de trabajos rutinarios, las oportunidades que genera la ia para los paises en desarrollo y de la transición a las nuevas habilidades.
+
+## ¿Las máquinas nos desemplean? (Documento 9)
+
+Primero habla de tres efectos que suceden en el proceso de automatización en las empresas. 1 el desplazamiento donde un trabajo es desplazado por otro, 2 la complementaridad, donde aparecen nuevos puestos asociados a nuevas tareas y 3 la productividad, que su aumento devido a la producción se plasma en una baja de precios (no está muy claro este último). 
+
+### perspectivas en latinoamérica.
+
+Habla de que las diferencias en infraestructura respecto a los paises desarrollados no permite una visión clara de cómo impactará la automatización. Pero propone tomar las ventajas que esta trae teniendo en cuenta 1 la capacitación de los trabajadores en estado de vulnerabilidad para que la transición sea inclusiva. 2 Se dan muchos ejemplos de uso de automatización e ia exitosos y de impacto y luego plantea del trade off entre tener más productividad con humanización de empleo y averiguar cuáles son las nuevas tareas asociadas a la automatización.
+
+## Los trabajos y tareas que surgen en la era de la ia (documento 10)
+
+Se basan en cuatro aspectos:
+1. trabajos centrados en el uso y mejora de la tecnología: 
+2. los freelance que se desarrollan en la economía colaborativa: trabajos por proyecto en un área específica, efímero
+3. los empleos que surgen de las redes sociales
+4. economía naranja, asociado al crecimiento de las actividades vinculadas a la creatividad, el arte y el entretenimiento.
+
+
+## Acelerar la reconverción y proteger a las personas vulnerables.
+
+Debemos ocuparnos de fortalecer e impulsar siete grandes factores para acelerar la reconverción y proteger a las personas vulnerables
+
+1. La transición trae aparejada un trabajo extra de implementación y la aparición de tiempo para ocuparse de nuevos problemas que no 
+2. es clave diferenciar trabajos y tareas, para dividirlas en tres grandes mundos: automatizables, no automatizables y semiautomatizables.
+3. todo lo que surge de forma indirecta, no prevista, cuánto impacta a nivel global, cómo se reconvierten las personas que se dedican a esas tareas, y cuánto tardan las innovaciones en avanzar.
+4. Existe una gran brecha entre los que pueden desarrollar IA, los que están capacitados para entenderla, acompañar el proceso, y los altos costos que puede suponer escalar sistemas en los que en la mayoría de los casos existen entornos de small data. 
+5. Poner los sistemas en función de los humanos, automatizando lo automatizable, reduciendo cliks y cantidad de ventanas a abrir para realizar un procedimiento.
+6. el crecimiento exponencial de ciertas tecnologías abre puertas impensadas e indirectas.
+7. muchos nuevos trabajos no requieren adaptación ni formación académica. Por ejemplo, si tiene auto y licencia, puede ser chofer de
+Uber en Mendoza.
+
+## Paradojas tecnologicas de la historia. Como aprovecharlas para enfocar la IA de manera sostenible
+
+Empieza hablando de que tecnologías viejas pueden ser más rápidas que las nuevas, da un ejemplo del telégrafo vs sms. Otro ejemplo más representativo es que hoy en día en las ciudades es más rápido la bicicleta que los automóviles ya que la innovación no encuadra dentro de un modelo sostenible.
+
+### El cantante sin voz
+
+Habla de cómo la industria de la música no evolucionó de manera lineal, y que era muy dificil de predicir el modelo de negocio que actualmente existe. Habla de la transición del cd al straming y de cómo se reditribuyen las ganancias y como la ia juega un papel importante hoy en la defensa de los derechos de autor.
+
+### Motzar, Salieri y la ia
+
+Muy lindo pero no se entiende a qué quiere llegar.
+
+# Unidad 2  Introducción a la gobernanza de datos
+
+## Cómo hacer un buen gobierno de datos.
+
+Habla de dos paradigmas, el de la academia y el de la industria. El de la academia como punto de partida y el de la industra el que genera conocimiento práctico más útil, ya que permite la maduración.
+
+Valor de los datos. Es el reto de la política del gobierno de datos.
+
+Habla de los metadatos, y de la gran relevancia de esto para gestionar datos. Es el diccionario de qué es un dato y para qué se utiliza dentro de la organización, y qué valor tiene.
+
+Asociación de gestión de los datos.
+Define que hay gobierno de datos si tengo un marco de gestión, en donde hay un conjunto de categorías en las que los datos están enmarcados.
+
+![gobernanza](img/gobernanza.png)
+
+Entorno propuesto por esta organización
+
+![entorno](img/entorno.png)
+
+## BLACK MIRROR “Bandersnatch” y organizaciones 4.0
+
+Habla de los árboles de decisión y su aplicación a la burocracia.
+
+## Trabajos vs Tareas (Documentos 1)
+
+En general, los oficios y las profesiones que desarrollan las personas están conformados por múltiples y diversas tareas, que a su vez
+requieren distinciones en relación a las capacidades cognitivas que hay detrás de cada una. Pero, además, el desarrollo de la inteligencia Artificial y de la robótica depende en gran medida del tipo de tarea que se realice y de cómo se interconecta con otras. Aquí podemos hablar de grados de automatización.
+
+Entre diversos obstáculos, hay dos factores clave para entender las razones por las cuales los sistemas de IA no avanzarán tan rápido sobre las actividades o tareas que integran trabajos o empleos con significativa carga burocrática. 
+
+Una es la imposibilidad de que los datos se encuentren organizados y disponibles digitalmente.
+
+La otra es la necesidad de etiquetado de datos generados para que los expertos en ia puedan entrenar los modelos.
+
+los sistemas más exitosos de Inteligencia Artificial requieren muchas personas, para que junto a la inteligencia humana, logren mejorar todo lo que rodea a una o varias actividades concretas. A este fenómeno se lo llama “paradigma de inteligencia híbrida”, que resulta de combinar inteligencia humana más inteligencia artificial.
+
+## Instructivo de gobrernanza de datos. (Documento 2)
+
+### Paso a paso de los procesos de gobernanza de datos
 
 

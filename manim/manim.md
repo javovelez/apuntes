@@ -22,7 +22,7 @@ class SquareToCircle(Scene):
         square.flip(RIGHT)                   # lo espeja horizontalmente
         square.rotate(-3 * TAU / 8)           # Lo rota un determinado ángulo
 
-        self.play(ShowCreation(square))      # anima la creación de un cuadrado
+        self.play(Create(square))      # anima la creación de un cuadrado
         self.play(Transform(square, circle)) # interpola el cuadrado hacia un círculo
         self.play(FadeOut(square))           # realiza un "fade out" de la animación
 ~~~
