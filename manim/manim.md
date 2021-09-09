@@ -37,11 +37,11 @@ Y como resultado obtendremos la siguiente animación:
 
 ![Output](images/SquareToCircle.gif)
 
-El parámetro ``-p `` provoca que se reproduzcael video resultante de la escena al finalizar de ser renderizada. Si en vez de reproducir el archivo queremos que abra el directorio que contiene el video usamos el parámetro ``-f``
+El parámetro ``-p `` provoca que se reproduzcael video resultante de la escena al finalizar de ser renderizada. Si en vez de reproducir el archivo queremos que abra el directorio que contiene el video usamos el parámetro ``-f`` (deprecado)
 
 El parámetro ``-ql`` indica low quality (480p). Alternativamente se pueden utilizar los parámetros ``-qm`` (720p) ``-qh`` (1080p) ``-qk``(4k).
 
-Manim genera por defecto archivos ``.mp4``. Si deseamos generar un archivo ``.gif`` usamos el parámetro ``-i``.
+Manim genera por defecto archivos ``.mp4``. Si deseamos generar un archivo ``.gif`` usamos el parámetro ``--format=gif``.
 
 Para renderizar todas las escenas de un .py se utiliza el parámetro ``-a``.
 
